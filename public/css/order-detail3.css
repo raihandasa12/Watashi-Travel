@@ -1,0 +1,271 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  color: #333;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 23px;
+}
+
+.logo-wrapper {
+  margin-top: -20px;
+  margin-right: 50vw;
+}
+
+.logo {
+  height: 40px;
+}
+
+.text-wrapper h1 {
+  font-size: 50px;
+  font-weight: 500;
+  text-align: center;
+  font-family: 'ZCOOL_XiaoWei';
+  src: url('/fonts/ZCOOL_XiaoWei/ZCOOLXiaoWei-Regular.ttf') format('ttf')
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  padding: 20px 0;
+  position: relative;
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Light.ttf') format('ttf')
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: #999;
+  position: relative;
+}
+
+.step .circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  margin-right: 6px;
+  background-color: #fff;
+  color: #888;
+}
+.step.completed .circle {
+    background-color: #3BB3AB;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+}
+.step.active .circle {
+    background-color: #000000;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+}
+
+.step.active {
+  color: #000;
+  font-weight: 500;
+}
+
+.step.active .circle {
+  border: 1px solid #3BB3AB;
+  color: #3BB3AB;
+}
+
+
+.step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 1px;
+  background-color: #e0e0e0;
+  z-index: 0;
+}
+
+.card {
+  width: 100%;
+  max-width: 780px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+}
+
+.card h2 {
+  font-size: 30px;
+  font-weight: normal;
+  margin-bottom: 24px;
+  font-family: 'ZCOOL_XiaoWei';
+  src: url('/fonts/ZCOOL_XiaoWei/ZCOOLXiaoWei-Regular.ttf') format('ttf')
+}
+
+.form-group {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc; /* Adjusted the border color */
+    padding-bottom: 15px; /* Increased padding for more space */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.summary-text {
+    font-size: 16px; /* Adjusted font size */
+    color: #555;
+    margin-bottom: 5px; /* Reduced margin */
+}
+
+.trip-schedule {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px; /* Maintain or adjust for spacing */
+}
+
+.trip-schedule span:first-child {
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.trip-schedule > span {
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.dates {
+    display: flex;
+    flex-direction: row; /* Menata date-item secara horizontal */
+    gap: 20px; /* Jarak antar pasangan */
+}
+
+.date-item {
+    display: flex;
+    flex-direction: column; /* Menata label dan tanggal secara vertikal */
+    gap: 5px; /* Jarak antara label dan tanggal */
+}
+
+.date-item p {
+    font-weight: bold;
+    color: #888;
+    margin: 0;
+}
+
+.date-item span {
+    color: #333;
+    margin: 0;
+}
+
+.summary-texting {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.summary-p {
+        font-size: 15px;
+        color: #333;
+        margin-bottom: -5px;
+    }
+
+.itinerary-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0 0 10px 0;
+}
+
+.itinerary-list li {
+    color: #006633;
+    margin-bottom: 5px;
+}
+
+
+
+.edit-btn {
+    background-color: #00bcd4; /* Soft teal for visual appeal */
+    color: #fff;
+    border: none;
+    padding: 6px 12px; /* Slightly larger button */
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    align-self: flex-start;
+    transition: background-color 0.3s; /* Smooth hover transition */
+}
+
+.edit-btn:hover {
+    background-color: #0097a7; /* Darker teal on hover */
+}
+
+
+.btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  font-size: 18px;
+  color: white;
+  background-color: #3db7ad;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+
+/* Next Button */
+.next-btn {
+  width: 100%;
+  background-color: #eaeaea;
+  color: #aaa;
+  font-size: 16px;
+  padding: 14px 0;
+  border-radius: 999px;
+  border: none;
+  margin-top: 50px;
+  cursor: not-allowed;
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Light.ttf') format('ttf');
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.next-btn.active {
+  background-color: #3db7ad;
+  color: white;
+  cursor: pointer;
+}
+
+

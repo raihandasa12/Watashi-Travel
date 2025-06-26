@@ -49,17 +49,6 @@
   <a href="#" class="lang-option">IND</a>
 </div>
 
-<script>
-  const langOptions = document.querySelectorAll('.lang-option');
-
-  langOptions.forEach(option => {
-    option.addEventListener('click', function(e) {
-      e.preventDefault(); // Mencegah link reload
-      langOptions.forEach(o => o.classList.remove('active'));
-      this.classList.add('active');
-    });
-  });
-</script>
 </header>
 
 <section class="hero">
@@ -68,8 +57,8 @@
         <h1>Discover Your Next Adventure<br>with Watashi Travel</h1>
         <p>At Watashi Travel, we curate unforgettable experiences that connect you with the beauty of Indonesia. Join us as we explore breathtaking landscapes and rich cultural heritage.</p>
 
-        <div class="search-bar">
-            <select>
+        <form class="search-bar" method="GET" action="{{ route('explore') }}">
+            <select name="destination" required>
                 <option selected>Select destination</option>
                 <option>Jawa</option>
                 <option>Bali</option>
@@ -80,7 +69,7 @@
                 <option>Papua & Maluku</option>
             </select>
 
-            <select>
+            <select name="city" required>
                 <option selected>Select city</option>
                 <option>Denpasar</option>
                 <option>Sleman</option>
@@ -90,7 +79,7 @@
                 <option>Sumatra</option>
             </select>
 
-            <button class="btn-view">View Packages</button>
+            <button type="submit" class="btn-view">View Packages</button>
         </div>
     </div>
 </section>
@@ -105,48 +94,50 @@
                     <img src="/images/Java.jpg" alt="Java">
                     <h3>Explore Java</h3>
                     <p>Java, the heart of Indonesia, offers a rich blend of ancient traditions, vibrant culture, and breathtaking landscapes.</p>
-                    <a href="#" class="view-btn">View Packages →</a>
+                    <a href="/explore?destination=Java" class="view-btn">View Packages →</a>
                 </div>
                 <div class="slide">
                     <img src="/images/Bali.jpg" alt="Bali">
                     <h3>Explore Bali</h3>
                     <p>From its white sandy beaches to majestic volcanoes, Bali offers mesmerizing natural beauty.</p>
-                    <a href="#" class="view-btn">View Packages →</a>
+                    <a href="/explore?destination=Bali" class="view-btn">View Packages →</a>
                 </div>
                 <div class="slide">
                     <img src="/images/Papua.jpg" alt="Papua & Maluku">
                     <h3>Explore Papua and Maluku</h3>
                     <p>Papua and Maluku hold the hidden wonders of Eastern Indonesia, rich in culture, natural beauty, and adventure.</p>
-                    <a href="#" class="view-btn">View Packages →</a>
+                    <a href="/explore?destination=Papua" class="view-btn">View Packages →</a>
                 </div>
                 <div class="slide">
                     <img src="/images/Sumatra.jpg" alt="Sumatra">
                     <h3>Explore Sumatra</h3>
                     <p>Discover wild nature, rich culture, and stunning beauty in Sumatra..</p>
-                    <a href="#" class="view-btn">View Packages →</a>
+                    <a href="/explore?destination=Sumatra" class="view-btn">View Packages →</a>
                 </div>
                 <div class="slide">
                     <img src="/images/Kalimantan.jpg" alt="Kalimantan">
                     <h3>Explore Kalimantan</h3>
                     <p>Explore Kalimantan’s wild beauty—rainforests, vast rivers, and rich Dayak culture await.</p>
-                    <a href="#" class="view-btn">View Packages →</a>
+                    <a href="/explore?destination=Kalimantan" class="view-btn">View Packages →</a>
                 </div>
                 <div class="slide">
                     <img src="/images/Sulawesi.jpg" alt="Sulawesi">
                     <h3>Explore Sulawesi</h3>
                     <p>Experience the uniqueness of Sulawesi, an island of striking shape and stunning natural and cultural wonders.</p>
-                    <a href="#" class="view-btn">View Packages →</a>
+                    <a href="/explore?destination=Sulawesi" class="view-btn">View Packages →</a>
                 </div>
                 <div class="slide">
                     <img src="/images/Nusa Tenggara.jpg" alt="Nusa Tenggara">
                     <h3>Explore Nusa Tenggara</h3>
                     <p>Venture into the stunning islands of Nusa Tenggara, where raw natural beauty meets vibrant traditions.</p>
-                    <a href="#" class="view-btn">View Packages →</a>
+                    <a href="/explore?destination=NusaTenggara" class="view-btn">View Packages →</a>
                 </div>
             </div>
-            <button class="next-btn">></button>
+            <button type="button" class="prev-btn">&lt;</button>
+            <button type="button" class="next-btn">&gt;</button>
         </div>
     </div>
+
     <body>
     <div class="travel-section">
         <div class="text-content">
@@ -159,15 +150,7 @@
             <img src="/images/Placeholder Image.jpg" alt="Group of travelers">
         </div>
     </div>
-    <script>
-        // JavaScript untuk menangani klik pada tombol Learn More
-        document.querySelector('.learn-more-btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('Learn more about our travel packages!');
-            // Ganti alert dengan navigasi ke halaman lain jika diperlukan
-            // window.location.href = '/packages';
-        });
-    </script>
+
     <body>
     <nav>
         </nav>
@@ -262,21 +245,6 @@
             <div class="wave-background"></div>
         </section>
     </main>
-    <script>
-        // JavaScript Anda akan diletakkan di sini, mungkin untuk fungsi slider testimonial
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('HTML loaded and parsed.');
-
-            // Dummy JS for slider dots and nav buttons if needed
-            const prevButton = document.querySelector('.prev-button');
-            const nextButton = document.querySelector('.next-button');
-            const dots = document.querySelectorAll('.slider-dots .dot');
-
-            if (prevButton && nextButton) {
-                prevButton.addEventListener('click', () => console.log('Prev button clicked'));
-                nextButton.addEventListener('click', () => console.log('Next button clicked'));
-            }
-
 <body>
   <div class="wrapper">
     <div class="content">
@@ -339,13 +307,13 @@
     <h3>Stay Updated</h3>
     <ul>
     <li>
-        <a href="https://www.facebook.com" target="_blank">
+        <a href="https://www.facebook.com/watashioutdoor" target="_blank">
             <img src="images/icons8-facebook.svg" alt="Facebook">
             Facebook
         </a>
     </li>
     <li>
-        <a href="https://www.instagram.com" target="_blank">
+        <a href="https://www.instagram.com/watashitravel?igsh=cG9rMXk0dDl1dWd3" target="_blank">
             <img src="images/icons8-instagram.svg" alt="Instagram">
             Instagram
         </a>
@@ -357,7 +325,7 @@
         </a>
     </li>
     <li>
-        <a href="https://www.whatsapp.com" target="_blank">
+        <a href="https://wa.me/6282224222080" target="_blank">
             <img src="images/icons8-whatsapp.svg" alt="WhatsApp">
             WhatsApp
         </a>
@@ -365,32 +333,7 @@
 </ul>
 </div>
   </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const quickLinks = document.querySelectorAll('.wt-middle a');
-      quickLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const page = link.getAttribute('data-link');
-          alert(`Navigating to ${page} page!`);
-        });
-      });
-      const socialLinks = document.querySelectorAll('.wt-right a');
-      socialLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const social = link.getAttribute('data-social');
-          const socialUrls = {
-            facebook: 'https://facebook.com',
-            instagram: 'https://instagram.com',
-            youtube: 'https://youtube.com',
-            whatsapp: 'https://whatsapp.com'
-          };
-          window.open(socialUrls[social], '_blank');
-        });
-      });
-    });
-  </script>
+
 <body>
   <div class="wt-bottom-section">
     <div class="wt-content">
@@ -421,18 +364,8 @@
       </ul>
     </div>
   </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const policyLinks = document.querySelectorAll('.wt-links a');
-      policyLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const policy = link.getAttribute('data-policy');
-          alert(`Opening ${policy} page!`);
-        });
-      });
-    });
-  </script>
+
+  <script src="{{ asset('js/home.js') }}"></script>
 </body>
 </html>
 

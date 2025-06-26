@@ -139,6 +139,7 @@
             <p class="signin-link">If you already have an account <a href="#">Sign In</a></p>
         </div>
         <div class="image-section">
+            <a href="{{ route('home') }}">
             <img src="/images/Register.png" alt="Scenic coastal road with a boat">
         </div>
     </div>

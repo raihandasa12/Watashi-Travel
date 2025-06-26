@@ -416,6 +416,10 @@ header {
     cursor: pointer;
     z-index: 10;
 }
+.prev-btn:disabled, .next-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
 
 .prev-btn {
     left: 0;

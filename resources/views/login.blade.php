@@ -159,7 +159,7 @@
         </form>
 
         <div class="bottom-text">
-            Don't you have an account? <a href="#">Sign Up</a>
+            Don't you have an account? <a href="{{ route('register') }}">Sign Up</a>
         </div>
 
         <div class="divider">Or Sign In with</div>
@@ -171,6 +171,7 @@
     </div>
 
     <div class="right-panel">
+        <a href="{{ route('home') }}">
         <img src="{{ asset('/images/Register.png') }}" alt="Travel Image">
     </div>
 </div>

@@ -2,17 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController; // Pastikan ini ada dan mengarah ke HomeController yang benar
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\OrderController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 // Rute untuk Homepage
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -36,3 +28,45 @@ Route::get('/login', [HomeController::class, 'login'])->name('login');
 Route::get('/explore', [HomeController::class, 'explore'])->name('explore');
 Route::get('/layanan', [HomeController::class, 'layanan'])->name('layanan');
 Route::get('/wisata', [HomeController::class, 'wisata'])->name('wisata');
+// routes/web.php
+Route::get('/explore', function (Illuminate\Http\Request $request) {
+    $destination = $request->query('destination');
+    $city = $request->query('city');
+    return view('explore', compact('destination', 'city'));
+})->name('explore');
+
+// routes/web.php
+Route::get('/layanan', function () {
+    return view('layanan');
+});
+
+Route::get('/wisata', function () {
+    return view('wisata'); // Ini akan me-render file wisata.blade.php
+});
+
+Route::get('/order-detail', function () {
+    return view('order-detail');
+});
+
+
+Route::get('/order-detail', function (Illuminate\Http\Request $request) {
+    $departureDate = $request->departure_date;
+    $returnDate = $request->return_date;
+    $adults = $request->adults;
+    $children = $request->children;
+
+    return view('order-detail', compact('departureDate', 'returnDate', 'adults', 'children'));
+})->name('order.detail');
+
+Route::get('/order-detail', function () {
+    return view('order-detail');
+})->name('order.detail');
+
+Route::get('/order-detail2', [OrderController::class, 'showDetail2'])->name('order.detail2');
+
+
+Route::post('/order-detail2', [OrderController::class, 'storeCustomerInfo'])->name('order.detail2.submit');
+
+Route::get('/order-detail3', function () {
+    return view('order-detail3');
+})->name('order.detail3');
