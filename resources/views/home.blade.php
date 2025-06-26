@@ -147,40 +147,6 @@
             <button class="next-btn">></button>
         </div>
     </div>
-    <script type="module">
-        document.addEventListener('DOMContentLoaded', () => {
-            const slider = document.querySelector('.slider');
-            const slides = document.querySelectorAll('.slide');
-            const prevBtn = document.querySelector('.prev-btn');
-            const nextBtn = document.querySelector('.next-btn');
-            let currentIndex = 0;
-
-            function updateSlider() {
-                if (slides.length === 0) return;
-                const offset = -currentIndex * (slides[0].offsetWidth + 20);
-                slider.style.transform = `translateX(${offset}px)`;
-                console.log('Current Index:', currentIndex); // Debug: lihat indeks
-            }
-
-            prevBtn.addEventListener('click', () => {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateSlider();
-                }
-            });
-
-            nextBtn.addEventListener('click', () => {
-                if (currentIndex < slides.length - 1) {
-                    currentIndex++;
-                    updateSlider();
-                }
-            });
-
-            // Pastikan slider diperbarui saat halaman dimuat sepenuhnya
-            window.addEventListener('load', updateSlider);
-            window.addEventListener('resize', updateSlider);
-        });
-    </script>
     <body>
     <div class="travel-section">
         <div class="text-content">
@@ -311,13 +277,6 @@
                 nextButton.addEventListener('click', () => console.log('Next button clicked'));
             }
 
-            if (dots.length > 0) {
-                dots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => console.log(`Dot ${index + 1} clicked`));
-                });
-            }
-        });
-    </script>
 <body>
   <div class="wrapper">
     <div class="content">
