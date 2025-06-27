@@ -37,26 +37,26 @@
     <a href="#" class="edit-btn">Edit</a>
   </div>
 
-  <div class="form-group">
-    <div class="trip-schedule">
-        <span>Trip Schedule</span>
-      <div class="dates">
+  <div class="trip-schedule">
+    <span class="section-title">Trip Schedule</span>
+    <div class="dates">
       <div class="date-item">
-        <p>Date of Departure</p>
-        <span>04/07/2025</span>
+        <span class="label">Date of Departure</span>
+        <span class="value">04/07/2025</span>
       </div>
       <div class="date-item">
-        <p>Return Date</p>
-        <span>05/07/2025</span>
-      </div>
+        <p class="label">Return Date</p>
+        <span class="value">05/07/2025</span>
       </div>
     </div>
   </div>
-  <div class="form-group">
-    <div class="summary-texting">Participants</div>
-      <div class="summary-p">1 Adult, 1 Child</div>
-      <a href="#" class="edit-btn">Edit</a>
-    </div>
+</div>
+
+<div class="form-group ">
+  <div class="summary-texting">Participants</div>
+  <div class="summary-p">1 Adult, 1 Child</div>
+  <a href="#" class="edit-btn">Edit ✎</a>
+</div>
   </div>
    <div class="summary-text">Your customized itinerary</div>
       <ul class="itinerary-list">

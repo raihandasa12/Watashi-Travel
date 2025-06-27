@@ -142,71 +142,48 @@ body {
 }
 
 .trip-schedule {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 15px; /* Maintain or adjust for spacing */
+  display: flex;
+  flex-direction: column;
 }
 
-.trip-schedule span:first-child {
-    font-weight: bold;
-    color: #666;
-    margin-bottom: 5px;
-}
-
-.trip-schedule > span {
-  font-weight: bold;
-  font-size: 16px;
-  display: block;
+.section-title {
+  font-size: 18px;
+  color: #555;
   margin-bottom: 10px;
 }
 
 .dates {
-    display: flex;
-    flex-direction: row; /* Menata date-item secara horizontal */
-    gap: 20px; /* Jarak antar pasangan */
+  display: flex;
+  gap: 60px;
 }
 
 .date-item {
-    display: flex;
-    flex-direction: column; /* Menata label dan tanggal secara vertikal */
-    gap: 5px; /* Jarak antara label dan tanggal */
+  display: flex;
+  flex-direction: column;
 }
 
-.date-item p {
-    font-weight: bold;
-    color: #888;
-    margin: 0;
+.label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+  padding-right: 100px;
 }
 
-.date-item span {
-    color: #333;
-    margin: 0;
+.value {
+  font-size: 15px;
+  font-weight: normal;
 }
 
 .summary-texting {
-    font-size: 18px;
-    color: #333;
-    font-weight: bold;
-    margin-bottom: 10px;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
 }
+
 .summary-p {
-        font-size: 15px;
-        color: #333;
-        margin-bottom: -5px;
-    }
-
-.itinerary-list {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin: 0 0 10px 0;
+  font-size: 20px;
+  color: #333;
 }
-
-.itinerary-list li {
-    color: #006633;
-    margin-bottom: 5px;
-}
-
 
 
 .edit-btn {
